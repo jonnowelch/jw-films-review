@@ -26,6 +26,6 @@ const HomeStack = createStackNavigator(screens, {
       height: 60,
     },
   },
-}); //must be an object
+});
 
 export default createAppContainer(HomeStack); //as this is defualt, means it can be imported as anything in another file
