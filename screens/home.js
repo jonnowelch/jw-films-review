@@ -11,6 +11,7 @@ import {
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewForm from "./newReview";
 
 export default function Home({ navigation }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Home({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType='fade'>
-        <View style={StyleSheet.modalContent}>
+        <View style={styles.modalContent}>
           <MaterialIcons
             name='close'
             size={24}
@@ -32,7 +33,7 @@ export default function Home({ navigation }) {
               setModalOpen(false);
             }}
           />
-          <Text>Hellomoto</Text>
+          <ReviewForm />
         </View>
       </Modal>
       <MaterialIcons
