@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Button, TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/global.js";
-import { formik, Formik } from "formik";
+import { Formik } from "formik";
 
-export default function ReviewForm() {
+export default function ReviewForm({ addReview }) {
   return (
     <View style={globalStyles.container}>
       <Formik
@@ -12,8 +12,9 @@ export default function ReviewForm() {
           body: "",
           rating: "",
         }}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values, actions) => {
+          actions.resetForm();
+          addReview(values);
         }}
       >
         {(props) => (
