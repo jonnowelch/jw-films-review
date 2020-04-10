@@ -15,3 +15,13 @@ export const globalStyles = StyleSheet.create({
     lineHeight: 20,
   },
 });
+
+export const images = {
+  ratings: {
+    "1": require("../assets/1star.png"),
+    "2": require("../assets/2star.png"),
+    "3": require("../assets/3star.png"),
+    "4": require("../assets/4star.png"),
+    "5": require("../assets/5star.png"),
+  },
+};
