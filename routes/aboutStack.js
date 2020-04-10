@@ -9,7 +9,7 @@ const screens = {
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: () => (
-          <Header title='About FilmReview' navigation={navigation} />
+          <Header title='About Page' navigation={navigation} />
         ),
       };
     },

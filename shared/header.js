@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  ImageBackground,
+} from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Header({ title, navigation }) {
@@ -8,32 +15,39 @@ export default function Header({ title, navigation }) {
   };
 
   return (
-    <View style={styles.header}>
+    <ImageBackground
+      source={require("../assets/headerbg.png")}
+      style={styles.header}
+    >
       <MaterialIcons
         name='menu'
         size={28}
         onPress={openMenu}
         style={styles.icon}
       />
-      <View>
+      <View style={styles.headerTitle}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/cinemaIcon.png")}
+        />
         <Text style={styles.headerText}>{title}</Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
     width: Dimensions.get("screen").width,
-    height: "100%",
+    height: "150%",
     flexDirection: "row",
     flex: 1,
-    alignItems: "center",
+    alignItems: "flex-end",
   },
   headerText: {
     fontWeight: "bold",
     fontSize: 20,
-    color: "#333",
+    color: "white",
     letterSpacing: 1,
     height: "100%",
     alignItems: "center",
@@ -42,5 +56,14 @@ const styles = StyleSheet.create({
     position: "relative",
     flexDirection: "column",
     flex: 0.5,
+    color: "white",
+  },
+  logo: {
+    height: 30,
+    width: 30,
+    marginHorizontal: 10,
+  },
+  headerTitle: {
+    flexDirection: "row",
   },
 });

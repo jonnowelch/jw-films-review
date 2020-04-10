@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderTopColor: "hotpink",
   },
   image: {
-    height: 20,
     width: 80,
+    height: 20,
   },
 });
