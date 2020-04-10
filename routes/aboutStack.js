@@ -1,20 +1,26 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import About from '../screens/about';
+import { createStackNavigator } from "react-navigation-stack";
+import React from "react";
+import Header from "../shared/header";
+import About from "../screens/about";
 
 const screens = {
   About: {
     screen: About,
-    navigationOptions: {
-      title: 'About FilmReview'
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => (
+          <Header title='About FilmReview' navigation={navigation} />
+        ),
+      };
     },
   },
-}
+};
 
 const AboutStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
-    headerTintColor: '#444',
-    headerStyle: { backgroundColor: '#eee', height: 60 },
-  }
+    headerTintColor: "#444",
+    headerStyle: { backgroundColor: "#eee", height: 60 },
+  },
 });
 
 export default AboutStack;
